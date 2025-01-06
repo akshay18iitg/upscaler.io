@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Queue</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #2a2a2a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .header .nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            color: #dcdcdc;
+        }
+
+        .card img {
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">PhotoUpscaler</div>
+        <div class="nav">
+            <a href="frontPage">Logout</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Images in Queue</h2>
+
+        <div class="row">
+            <% images.forEach(function(imageUrl) { %>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="<%= imageUrl %>" class="card-img-top img-fluid" alt="Image in Queue">
+                    <div class="card-body text-center">
+                        <p class="card-text">Image from Queue</p>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 PhotoUpscaler. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
